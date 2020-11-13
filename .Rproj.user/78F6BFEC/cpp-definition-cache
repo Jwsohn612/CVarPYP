@@ -1,0 +1,104 @@
+[
+    {
+        "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/rcpparma_hello_world.cpp",
+        "file_last_write": 1605286839.0,
+        "definitions": [
+            {
+                "usr": "c:@F@rcpparma_hello_world#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rcpparma_hello_world",
+                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/rcpparma_hello_world.cpp",
+                "line": 18,
+                "column": 11
+            },
+            {
+                "usr": "c:@F@rcpparma_outerproduct#&1$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rcpparma_outerproduct(const arma::colvec &)",
+                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/rcpparma_hello_world.cpp",
+                "line": 30,
+                "column": 11
+            },
+            {
+                "usr": "c:@F@rcpparma_innerproduct#&1$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rcpparma_innerproduct(const arma::colvec &)",
+                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/rcpparma_hello_world.cpp",
+                "line": 38,
+                "column": 8
+            },
+            {
+                "usr": "c:@F@rcpparma_bothproducts#&1$@N@arma@S@Col>#d#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "rcpparma_bothproducts(const arma::colvec &)",
+                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/rcpparma_hello_world.cpp",
+                "line": 47,
+                "column": 12
+            }
+        ]
+    },
+    {
+        "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/utils.cpp",
+        "file_last_write": 1605288523.0,
+        "definitions": [
+            {
+                "usr": "c:@F@byproducts#$@N@arma@S@Col>#d#I#I#I#I#I#S0_#I#I#$@N@arma@S@Mat>#d#S1_#S0_#S0_#S0_#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "byproducts(arma::vec, int, int, Rcpp::List, Rcpp::List, Rcpp::List, arma::vec, Rcpp::List, Rcpp::List, arma::mat, arma::mat, arma::vec, arma::vec, arma::vec, Rcpp::Function)",
+                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/utils.cpp",
+                "line": 7,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@KnotSelection#I#I#d#I#I#I#I#$@N@arma@S@Col>#d#I#S0_#S0_#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "KnotSelection(int, int, double, Rcpp::List, Rcpp::NumericVector, Rcpp::List, Rcpp::List, arma::vec, Rcpp::List, arma::vec, arma::vec)",
+                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/utils.cpp",
+                "line": 61,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@MakeRk#I#$@N@arma@S@Col>#d#S0_#I#I#I#I#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "MakeRk(int, arma::vec, arma::vec, Rcpp::List, Rcpp::List, Rcpp::List, Rcpp::List, int, Rcpp::Function)",
+                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/utils.cpp",
+                "line": 108,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@sample_randomeffects#I#I#I#I#I#I#I#$@N@arma@S@Col>#d#$@N@arma@S@Mat>#d#I#S0_#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "sample_randomeffects(int, Rcpp::List, Rcpp::List, Rcpp::List, Rcpp::List, Rcpp::List, Rcpp::List, arma::vec, arma::mat, Rcpp::List, arma::vec, int, Rcpp::Function)",
+                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/utils.cpp",
+                "line": 140,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@MakeRkPsi#I#I#I#$@N@arma@S@Col>#d#S0_#I#I#$@N@arma@S@Mat>#d#I#I#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "MakeRkPsi(Rcpp::List, int, Rcpp::List, arma::vec, arma::vec, Rcpp::List, Rcpp::List, arma::mat, Rcpp::List, Rcpp::List, int, Rcpp::Function)",
+                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/utils.cpp",
+                "line": 170,
+                "column": 6
+            },
+            {
+                "usr": "c:@F@ObtainOutput#I#I#$@N@arma@S@Col>#d#I#I#I#S0_#I#I#I#I#I#",
+                "kind": 6,
+                "parent_name": "",
+                "name": "ObtainOutput(int, int, arma::vec, Rcpp::List, Rcpp::List, Rcpp::List, arma::vec, Rcpp::List, Rcpp::List, Rcpp::List, Rcpp::List, Rcpp::Function)",
+                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/utils.cpp",
+                "line": 213,
+                "column": 6
+            }
+        ]
+    }
+]
