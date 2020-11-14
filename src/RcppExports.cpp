@@ -6,49 +6,6 @@
 
 using namespace Rcpp;
 
-// rcpparma_hello_world
-arma::mat rcpparma_hello_world();
-RcppExport SEXP _cvarpyp_rcpparma_hello_world() {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    rcpp_result_gen = Rcpp::wrap(rcpparma_hello_world());
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_outerproduct
-arma::mat rcpparma_outerproduct(const arma::colvec& x);
-RcppExport SEXP _cvarpyp_rcpparma_outerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_outerproduct(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_innerproduct
-double rcpparma_innerproduct(const arma::colvec& x);
-RcppExport SEXP _cvarpyp_rcpparma_innerproduct(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_innerproduct(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// rcpparma_bothproducts
-Rcpp::List rcpparma_bothproducts(const arma::colvec& x);
-RcppExport SEXP _cvarpyp_rcpparma_bothproducts(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const arma::colvec& >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(rcpparma_bothproducts(x));
-    return rcpp_result_gen;
-END_RCPP
-}
 // byproducts
 List byproducts(arma::vec num_obs, int K, int NSbj, List C_star_sbj, List gamma, List X_sbj, arma::vec beta, List Z_sbj, List L_sbj, arma::mat Psi, arma::mat Psi0, arma::vec ID, arma::vec Clusters, arma::vec active, Function flatten_gamma);
 RcppExport SEXP _cvarpyp_byproducts(SEXP num_obsSEXP, SEXP KSEXP, SEXP NSbjSEXP, SEXP C_star_sbjSEXP, SEXP gammaSEXP, SEXP X_sbjSEXP, SEXP betaSEXP, SEXP Z_sbjSEXP, SEXP L_sbjSEXP, SEXP PsiSEXP, SEXP Psi0SEXP, SEXP IDSEXP, SEXP ClustersSEXP, SEXP activeSEXP, SEXP flatten_gammaSEXP) {
@@ -183,10 +140,6 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_cvarpyp_rcpparma_hello_world", (DL_FUNC) &_cvarpyp_rcpparma_hello_world, 0},
-    {"_cvarpyp_rcpparma_outerproduct", (DL_FUNC) &_cvarpyp_rcpparma_outerproduct, 1},
-    {"_cvarpyp_rcpparma_innerproduct", (DL_FUNC) &_cvarpyp_rcpparma_innerproduct, 1},
-    {"_cvarpyp_rcpparma_bothproducts", (DL_FUNC) &_cvarpyp_rcpparma_bothproducts, 1},
     {"_cvarpyp_byproducts", (DL_FUNC) &_cvarpyp_byproducts, 15},
     {"_cvarpyp_KnotSelection", (DL_FUNC) &_cvarpyp_KnotSelection, 11},
     {"_cvarpyp_MakeRk", (DL_FUNC) &_cvarpyp_MakeRk, 9},

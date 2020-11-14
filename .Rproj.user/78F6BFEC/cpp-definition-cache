@@ -1,47 +1,5 @@
 [
     {
-        "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/rcpparma_hello_world.cpp",
-        "file_last_write": 1605286839.0,
-        "definitions": [
-            {
-                "usr": "c:@F@rcpparma_hello_world#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "rcpparma_hello_world",
-                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/rcpparma_hello_world.cpp",
-                "line": 18,
-                "column": 11
-            },
-            {
-                "usr": "c:@F@rcpparma_outerproduct#&1$@N@arma@S@Col>#d#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "rcpparma_outerproduct(const arma::colvec &)",
-                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/rcpparma_hello_world.cpp",
-                "line": 30,
-                "column": 11
-            },
-            {
-                "usr": "c:@F@rcpparma_innerproduct#&1$@N@arma@S@Col>#d#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "rcpparma_innerproduct(const arma::colvec &)",
-                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/rcpparma_hello_world.cpp",
-                "line": 38,
-                "column": 8
-            },
-            {
-                "usr": "c:@F@rcpparma_bothproducts#&1$@N@arma@S@Col>#d#",
-                "kind": 6,
-                "parent_name": "",
-                "name": "rcpparma_bothproducts(const arma::colvec &)",
-                "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/rcpparma_hello_world.cpp",
-                "line": 47,
-                "column": 12
-            }
-        ]
-    },
-    {
         "file": "C:/Users/JinwonSohn/Documents/R/workspace/cvarpyp/src/utils.cpp",
         "file_last_write": 1605359365.0,
         "definitions": [

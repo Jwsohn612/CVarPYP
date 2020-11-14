@@ -7,6 +7,14 @@ Author: Who wrote it
 Maintainer: Who to complain to <yourfault@somewhere.net>
 Description: More about what it does (maybe more than one line)
 License: What license is it under?
-Imports: Rcpp (>= 1.0.5)
+Imports: 
+    Rcpp (>= 1.0.5),
+    dplyr,
+    purrr,
+    progress,
+    rlist,
+    truncnorm,
+    MCMCpack,
+    mvtnorm
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 7.1.1
