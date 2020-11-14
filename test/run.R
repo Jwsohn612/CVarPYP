@@ -1,3 +1,5 @@
+devtools::install_github('jwsohn612/cvarpyp')
+
 library(cvarpyp)
 
 data <- get_simulation_data(N=600, K=3, M=10)
@@ -9,9 +11,6 @@ X <- data$dataset[c('fix1','fix2')]
 Z <- data$dataset[c('re1','re2')]
 t <- data$dataset$t
 Y <- data$dataset$Y
-
-# Li <- data$Li
-# bi <- data$bi
 
 model.output <- cvarpyp(ID=ID,
                         W=W,
