@@ -1,7 +1,3 @@
-remove.packages('cvarpyp')
-
-devtools::install_github('jwsohn612/cvarpyp')
-
 library(cvarpyp)
 
 data <- get_simulation_data(N=600, K=3, M=10)
