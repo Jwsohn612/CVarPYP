@@ -1,3 +1,5 @@
+remove.packages('cvarpyp')
+
 devtools::install_github('jwsohn612/cvarpyp')
 
 library(cvarpyp)

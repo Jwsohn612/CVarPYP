@@ -37,10 +37,13 @@ List byproducts(arma::vec num_obs, int K, int NSbj, List C_star_sbj, List gamma,
   for(int k=0 ; k<K ; k++){
     if(std::find(active.begin(),active.end(),(k+1)) != active.end()){
       arma::uvec pos_k = find((Clusters-1)==k);
+      
       int mat_size = as<arma::mat>(XXi_sbj[pos_k[0]]).n_cols;
+      int pos_size = pos_k.size();
+      
       arma::mat XXi_sum_temp = arma::zeros(mat_size, mat_size);
       arma::mat Xi_sum_temp = arma::zeros(mat_size, 1);
-      for(int l=0 ; l<pos_k.size() ; l++){
+      for(int l=0 ; l < pos_size ; l++){
         XXi_sum_temp += as<arma::mat>(XXi_sbj[pos_k[l]]);
         Xi_sum_temp += as<arma::vec>(Xi_sbj[pos_k[l]]);
       }
@@ -81,10 +84,12 @@ List KnotSelection(int small_k, int NSbj, double tau, List C_star_sbj, NumericVe
   
   arma::uvec pos_k = find(Clusters==small_k);
   int mat_size = as<arma::mat>(XXi_sbj[pos_k[0]]).n_cols;
+  int pos_size = pos_k.size();
+  
   arma::mat XXi_sum_temp = arma::zeros(mat_size, mat_size);
   arma::mat Xi_sum_temp = arma::zeros(mat_size, 1);
   
-  for(int l=0 ; l<pos_k.size() ; l++){
+  for(int l=0 ; l<pos_size ; l++){
     XXi_sum_temp += as<arma::mat>(XXi_sbj[pos_k[l]]);
     Xi_sum_temp += as<arma::vec>(Xi_sbj[pos_k[l]]);
   }
