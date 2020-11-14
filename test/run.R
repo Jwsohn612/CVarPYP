@@ -1,8 +1,5 @@
-install.packages('cvarpyp')
-
 library(cvarpyp)
 library(dplyr)
-library(purrr)
 
 data <- get_simulation_data(N=300, M=10)
 
