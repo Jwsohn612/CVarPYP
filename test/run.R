@@ -1,42 +1,36 @@
-library(cvarpyp)
+install.packages('cvarpyp')
 
-data <- get_simulation_data(N=600, K=3, M=10)
+library(cvarpyp)
+library(dplyr)
+library(purrr)
+
+data <- get_simulation_data(N=300, M=10)
 
 # Input 
-ID <- data$dataset$ID
-W <- data$dataset[c('var1','var2','var3','var4')]
-X <- data$dataset[c('fix1','fix2')]
-Z <- data$dataset[c('re1','re2')]
-t <- data$dataset$t
-Y <- data$dataset$Y
+ID <- data %>% pull(ID)
+W <- data %>% select(c('var1','var2','var3','var4'))
+X <- data %>% select(c('fix1','fix2'))
+Z <- data %>% select(c('re1','re2'))
+t <- data %>% pull(t)
+Y <- data %>% pull(Y)
 
-model.output <- cvarpyp(ID=ID,
-                        W=W,
-                        X=X,
-                        Z=Z,
-                        t=t,
-                        Y=Y, 
-                        K.max=6,
-                        num_knots = 10,
-                        num_iters = 1000)
+output <- cvarpyp(ID=ID,
+                  W=W,
+                  X=X,
+                  Z=Z,
+                  t=t,
+                  Y=Y, 
+                  K_max=5,
+                  num_knots = 10,
+                  num_iters = 100)
 
-summarise_Psi(Psi.sample=model.output$Psi.sample, 
-              row.position=1, col.position=2)
+plot(output$random_effect, row_position=1, col_position=1, burn=NULL)
 
-summarise_beta(beta.sample=model.output$beta.sample, 
-               position=2, burn=NULL)
+plot(output$fixed_effect, position=2, burn=NULL)
 
-summarise_cluster(cluster.sample = model.output$cluster.sample)
+plot(output$varying_coefficient, cluster_number = 5, variable_number = 1)
 
-vc_object <- get_post_summary_vc(time_range = model.output$time.range, 
-                                 knots = model.output$knots, 
-                                 gamma.sample = model.output$gamma.sample, 
-                                 theta.sample = model.output$theta.sample, grids=50,  burn=NULL)
+plot(output$latent_location, cluster_number = 5, variable_number = 1, time_range=output$time_range, knot_position=output$knot_position, burn=NULL)
 
-summarise_varying_coefficient(vc_object, cluster_number = 5, variable_number = 1)
-
-summarise_latent_location(time_range = model.output$time.range, 
-                          knots = model.output$knots,
-                          gamma.sample = model.output$gamma.sample, 
-                          cluster_number = 1, variable_number = 2, burn=NULL)
+# plot(output$cluster)
 

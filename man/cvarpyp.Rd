@@ -12,7 +12,7 @@ cvarpyp(
   t,
   Y,
   num_knots = 10,
-  K.max,
+  K_max,
   num_iters = 10000,
   sampling_unit = 5,
   nu = 1,
@@ -42,7 +42,7 @@ cvarpyp(
 
 \item{num_knots}{The number of knots for splines}
 
-\item{K.max}{The upper bound of the number of clusters for the stick-breaking process}
+\item{K_max}{The upper bound of the number of clusters for the stick-breaking process}
 
 \item{num_iters}{The number of iterations for the partially collapsed Gibbs sampler}
 

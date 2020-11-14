@@ -64,17 +64,17 @@ get_sbj_clusters <- function(K, clusters){
 
 
 # ==== Unit Basis Data
-B<- function(t, knots, sd){
-  dist <- abs(t-knots)
+B<- function(t, knot_position, sd){
+  dist <- abs(t-knot_position)
   basis <- dist^3
   return(c(1, t, basis))
 }
 
 make_sym <- function(A) (t(A)+A)/2
 # ==== Generate Basis Data
-get_basis_data <- function(tData, t, knots, sd){
+get_basis_data <- function(tData, t, knot_position, sd){
   n_cols <- ncol(tData)
-  UnitBasis <- lapply(t, function(x) B(x, knots, sd))
+  UnitBasis <- lapply(t, function(x) B(x, knot_position, sd))
   out_data<-list()
   for(i in 1:n_cols){
     temp_data <- lapply(1:length(t), function(x) tData[x,i]*UnitBasis[[x]])
@@ -314,6 +314,64 @@ sample_beta <- function(kappa, q, XSum, NSbj, X_sbj, L_sbj, C_star_sbj_k, theta_
 }
 
 
+get_theta_gamma_matrix <- function(p, unit_gamma, unit_theta){
+  positions <- c(1,apply(unit_gamma, 1, sum))
+  indexing <- map(1:p, function(i) {
+    start <- positions[1:i] %>% sum
+    end <- start + positions[i+1] - 1
+    c(start,end)
+  })
+  
+  do.call(rbind, map(1:p, function(i) {
+    index <- indexing[[i]]
+    temp_gamma <- unit_gamma[i,]
+    temp_gamma[temp_gamma==1] <- unit_theta[index[1]:index[2]]
+    temp_gamma
+  }))
+}
+
+get_post_summary_vc <- function(t, time_range, knot_position, gamma, theta, grids=50, burn=NULL) {
+  
+  len <- length(gamma)
+  burn <- ifelse(is.null(burn), round(len/2,0), burn) 
+  time_domain <- seq(from=time_range[1], to=time_range[2], l=grids)
+  
+  sd_ <- sd(t)
+  K <- length(gamma[[1]])
+  p <- dim(gamma[[1]][[1]])[[1]]
+  
+  
+  basis_functions <- map(time_domain, ~ matrix(rep(B(.x, knot_position, sd_),p),nrow=p, byrow=T )) 
+  
+  # Time => MCMC => Cluster
+  Bgamma <- map(1:length(time_domain), function(time) {
+    map(gamma[(burn+1):len], function(gamma_)  map(gamma_, function(each_cls) {
+      bgam_mat <- each_cls * basis_functions[[time]] # p times knots matrices
+      bgam_mat
+    }))
+  })
+  
+  Tgamma <-  map((burn+1):len, function(MC) {
+    map(1:K, function(k) get_theta_gamma_matrix(p, gamma[[MC]][[k]], theta[[MC]][[k]]) %>% t)  
+  })
+  
+  vc_summary <-  map(1:K, function(k) {
+    
+    map(1:length(time_domain), function(time) {
+      
+      temp_mat<- do.call(rbind, 
+                         map(1:length((burn+1):len), function(MC) {
+                           diag(Bgamma[[time]][[MC]][[k]] %*% Tgamma[[MC]][[k]])
+                         }))
+      
+      apply(temp_mat,2,function(x) quantile(x, c(0.025,0.5,0.975)))
+      
+    })
+  })
+  
+  list(vc_summary = vc_summary,
+       time_domain = time_domain)
+}
 
 
 

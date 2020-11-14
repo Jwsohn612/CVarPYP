@@ -4,7 +4,7 @@
 \alias{get_simulation_data}
 \title{Get simulation data}
 \usage{
-get_simulation_data(N, K, M, set.seed = 0)
+get_simulation_data(N, K, M, seed = 0)
 }
 \arguments{
 \item{N}{The number of subjects}
