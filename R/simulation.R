@@ -17,7 +17,7 @@ get_simulation_data <- function(N, K, M, seed=0){
   r <- 2
   
   ID <- 1:N
-  ni = rpois(N, M)+1
+  ni = rpois(N, M)
   
   n = sum(ni)
   

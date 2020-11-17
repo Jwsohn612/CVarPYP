@@ -1,10 +1,23 @@
 Package: cvarpyp
 Type: Package
-Title: What the package does (short line)
+Title: cvarpyp
 Version: 1.0
 Date: 2020-11-14
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
+Author: 
+c(person("Tianqi", "Chen", role = c("aut"),
+         email = "tianqi.tchen@gmail.com"),
+  person("Tong", "He", role = c("aut", "cre"),
+         email = "hetong007@gmail.com"),
+  person("Michael", "Benesty", role = c("aut"),
+         email = "michael@benesty.fr"),
+  person("Vadim", "Khotilovich", role = c("aut"),
+         email = "khotilovich@gmail.com"),
+  person("Yuan", "Tang", role = c("aut"),
+         email = "terrytangyuan@gmail.com",
+         comment = c(ORCID = "0000-0001-5243-233X")),
+  person("Hyunsu", "Cho", role = c("aut"),
+         email = "chohyu01@cs.washington.edu"))
+Maintainer: Jinwon Sohn <jwsohn612@gmail.com>
 Description: More about what it does (maybe more than one line)
 License: What license is it under?
 Imports: 

@@ -1,7 +1,6 @@
-library(cvarpyp)
 library(dplyr)
 
-data <- get_simulation_data(N=300, M=10)
+data <- get_simulation_data(N=600, M=10)
 
 # Input 
 ID <- data %>% pull(ID)
@@ -19,7 +18,7 @@ output <- cvarpyp(ID=ID,
                   Y=Y, 
                   K_max=5,
                   num_knots = 10,
-                  num_iters = 100)
+                  num_iters = 2000)
 
 plot(output$random_effect, row_position=1, col_position=1, burn=NULL)
 
